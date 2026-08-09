@@ -355,32 +355,6 @@
 		<RightAnchorToLeft>false</RightAnchorToLeft>
 	</Label>
 	
-	  <Label item="MQ_TargetLevel">
-		<ScreenID>MQ_TargetLevel</ScreenID>
-		<Style_Tooltip>false</Style_Tooltip>
-		<EQType>9999</EQType>
-		<Font>2</Font>
-		<TooltipReference>${Target.Level}</TooltipReference>
-		<RelativePosition>true</RelativePosition>
-		<Location>
-		  <X>20</X>
-		  <Y>31</Y>
-		</Location>
-		<Size>
-		  <CX>22</CX>
-		  <CY>25</CY>
-		</Size>
-		<Text>70</Text>
-		<TextColor>
-		  <R>255</R>
-		  <G>255</G>
-		  <B>255</B>
-		</TextColor>
-		<NoWrap>true</NoWrap>
-		<AlignCenter>true</AlignCenter>
-		<AlignRight>false</AlignRight>
-		<AlignLeft>false</AlignLeft>
-	  </Label>
 	  <Label item="A_TLVL_Label">
 		<ScreenID>TLVL_Label</ScreenID>
 		<Font>2</Font>
@@ -403,12 +377,41 @@
 		<AlignCenter>False</AlignCenter>
 		<AlignRight>false</AlignRight>
 	  </Label>
+
+
+	  <Label item="MQ_TargetLevel">
+		<ScreenID>MQ_TargetLevel</ScreenID>
+		<Style_Tooltip>false</Style_Tooltip>
+		<EQType>9999</EQType>
+		<Font>2</Font>
+		<TooltipReference>${If[${Target.ID},${Target.Level},000]}</TooltipReference>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+		  <X>20</X>
+		  <Y>31</Y>
+		</Location>
+		<Size>
+		  <CX>22</CX>
+		  <CY>25</CY>
+		</Size>
+		<Text>70</Text>
+		<TextColor>
+		  <R>255</R>
+		  <G>255</G>
+		  <B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>true</AlignCenter>
+		<AlignRight>false</AlignRight>
+		<AlignLeft>false</AlignLeft>
+	  </Label>
+
 	    <Label item="MQ_TargetClass">
 		<ScreenID>MQ_TargetClass</ScreenID>
 		<Style_Tooltip>false</Style_Tooltip>
 		<EQType>9999</EQType>
 		<Font>2</Font>
-		<TooltipReference>${Target.Class.ShortName}</TooltipReference>
+		<TooltipReference>${If[${Target.ID},${Target.Class.ShortName},000]}</TooltipReference>
 		<RelativePosition>true</RelativePosition>
 		<Location>
 		  <X>50</X>
@@ -434,7 +437,7 @@
 		<Style_Tooltip>false</Style_Tooltip>
 		<EQType>9999</EQType>
 		<Font>2</Font>
-		<TooltipReference>${Target.HeadingTo}</TooltipReference>
+		<TooltipReference>${If[${Target.ID},${Target.HeadingTo},000]}</TooltipReference>
 		<RelativePosition>true</RelativePosition>
 		<Location>
 		  <X>93</X>
